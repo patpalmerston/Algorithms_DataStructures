@@ -13,12 +13,20 @@
 //         .join('');
 // }
 
+// function reverse(str) {
+//     let newb = [];
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         newb.push(str[i]);
+//     }
+//     return newb.join('');
+// }
+
 function reverse(str) {
-    let newb = [];
-    for (let i = str.length - 1; i >= 0; i--) {
-        newb.push(str[i]);
+    let reversed = '';
+    for (let char of str) {
+        reversed = char + reversed;
     }
-    return newb.join('');
+    return reversed;
 }
 
 // function reverse(str) {

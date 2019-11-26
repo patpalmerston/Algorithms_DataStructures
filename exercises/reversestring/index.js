@@ -30,9 +30,11 @@
 // }
 
 function reverse(str) {
-    return str.split('').reduce((reversed, charachter) => {
-        return charachter + reversed;
-    }, '');
+    debugger;
+    return str
+        .split('')
+        .reduce((emptyString, strChar) => emptyString + strChar, '');
 }
+reverse('Greetings!');
 
 module.exports = reverse;

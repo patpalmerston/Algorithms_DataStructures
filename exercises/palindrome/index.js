@@ -17,6 +17,8 @@
 //     } else {
 //         return false;
 //     }
+//  // another boolean statement option
+//  //return str === newStr
 // }
 
 // function palindrome(str) {
@@ -31,9 +33,16 @@
 //     } else {
 //         return false;
 //     }
+//     // another boolean statement option
+//     //return str === newStr
 // }
 
-function palindrome(str) {}
+function palindrome(str) {
+    // i is the index of the array we are checking against, we need to check the char against the opposite index of that char to make sure they match
+    return str.split('').every((char, i) => {
+        return char === str[str.length - i - 1];
+    });
+}
 // function palindrome(str) {}
 
 module.exports = palindrome;

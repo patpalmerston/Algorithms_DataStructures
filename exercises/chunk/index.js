@@ -20,7 +20,32 @@
 //     }
 //     return newArray;
 // }
-function chunk(array, size) {}
+
+// function chunk(array, size) {
+//     const newArray = [];
+//     let copied = [...array];
+//     const numOfChildren = Math.ceil(copied.length / size);
+//     for (let i = 0; i < numOfChildren; i++) {
+//         newArray.push(copied.splice(0, size));
+//     }
+//     return newArray;
+// }
+
+function chunk(array, size) {
+    const chunked = [];
+
+    for (let element of array) {
+        const last = chunked[chunked.length - 1];
+        if (!last || last.length === size) {
+            chunked.push([element]);
+        } else {
+            last.push(element);
+        }
+    }
+    return chunked;
+}
+
+// function chunk(array, size) {}
 // function chunk(array, size) {}
 
 module.exports = chunk;

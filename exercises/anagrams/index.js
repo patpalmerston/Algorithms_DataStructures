@@ -31,19 +31,41 @@
 //     }
 // }
 
-function anagrams(stringA, stringB) {
-    const sanatize = str => {
-        return str
-            .split('')
-            .sort()
-            .join('')
-            .replace(/[^\w]/g, '')
-            .toLowerCase();
-    };
+// function anagrams(stringA, stringB) {
+//     const sanatize = str => {
+//         return str
+//             .split('')
+//             .sort()
+//             .join('')
+//             .replace(/[^\w]/g, '')
+//             .toLowerCase();
+//     };
 
-    return sanatize(stringA) == sanatize(stringB);
+//     return sanatize(stringA) == sanatize(stringB);
+// }
+function anagrams(stringA, stringB) {
+    const aCharMap = buildCharMap(stringA);
+
+    const bCharMap = buildCharMap(stringB);
+
+    if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+        return false;
+    }
+    // iterate over array with 'of' and 'in' for objects
+    for (let char in aCharMap) {
+        if (aCharMap[char] !== bCharMap[char]) {
+            return false;
+        }
+    }
+    return true;
 }
-// function anagrams(stringA, stringB) {}
+function buildCharMap(str) {
+    const charMap = {};
+    for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+        charMap[char] = charMap[char] + 1 || 1;
+    }
+    return charMap;
+}
 // function anagrams(stringA, stringB) {}
 // function anagrams(stringA, stringB) {}
 // function anagrams(stringA, stringB) {}

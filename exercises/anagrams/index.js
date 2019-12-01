@@ -32,6 +32,7 @@
 // }
 
 // function anagrams(stringA, stringB) {
+// this helper function can be inside or outside of the function
 //     const sanatize = str => {
 //         return str
 //             .split('')

@@ -8,29 +8,41 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {
-    let firstString;
-    let secondString;
+// function anagrams(stringA, stringB) {
+//     let firstString;
+//     let secondString;
 
-    firstString = stringA
-        .split('')
-        .sort()
-        .join('')
-        .replace(/[^\w]/g, '')
-        .toLowerCase();
-    secondString = stringB
-        .split('')
-        .sort()
-        .join('')
-        .replace(/[^\w]/g, '')
-        .toLowerCase();
-    if (firstString === secondString) {
-        return true;
-    } else {
-        return false;
-    }
+//     firstString = stringA
+//         .split('')
+//         .sort()
+//         .join('')
+//         .replace(/[^\w]/g, '')
+//         .toLowerCase();
+//     secondString = stringB
+//         .split('')
+//         .sort()
+//         .join('')
+//         .replace(/[^\w]/g, '')
+//         .toLowerCase();
+//     if (firstString === secondString) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+function anagrams(stringA, stringB) {
+    const sanatize = str => {
+        return str
+            .split('')
+            .sort()
+            .join('')
+            .replace(/[^\w]/g, '')
+            .toLowerCase();
+    };
+
+    return sanatize(stringA) == sanatize(stringB);
 }
-// function anagrams(stringA, stringB) {}
 // function anagrams(stringA, stringB) {}
 // function anagrams(stringA, stringB) {}
 // function anagrams(stringA, stringB) {}
